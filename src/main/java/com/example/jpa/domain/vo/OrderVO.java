@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "TBL_ORDER")
 @SequenceGenerator(name = "SEQ_ORDER", allocationSize = 1)
 @Getter
-@ToString
+@ToString(of={"orderNumber", "orderCount", "orderPrice"})
 @NoArgsConstructor
 public class OrderVO {
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 @SequenceGenerator(name = "SEQ_PRODUCT", allocationSize = 1)
 @Getter
-@ToString
+@ToString(of={"productNumber", "productName", "productPrice", "productStock"})
 @NoArgsConstructor
 public class ProductVO {
     @Id
@@ -29,6 +29,10 @@ public class ProductVO {
     @Column(name = "PRODUCT_STOCK")
     private Long productStock;
 
+
+    public void updateProductStock(Long productStock){
+        this.productStock = productStock;
+    }
 
 //    일대다 단방향에는 심각한 문제가 있다.
 //    주문을 추가할 때에는 orderVO = OrderVO.builder().orderCount(3).build();로 작성하고
